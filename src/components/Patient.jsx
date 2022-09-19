@@ -11,7 +11,7 @@ const Patient = ({ patient, setEditPatient, setDeletePatient, setModal }) => {
   const handleEdit = () => {
     setEditPatient(patient);
     window.scrollTo({
-      top: 0,
+      top: 170,
       behavior: "smooth",
     });
   };
