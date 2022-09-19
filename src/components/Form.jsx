@@ -18,6 +18,12 @@ const Form = ({ patients, setPatients, editPatient, setEditPatient }) => {
       setEmail(editPatient.email);
       setDate(editPatient.date);
       setSymptoms(editPatient.symptoms);
+    } else {
+      setName('');
+      setOwner('');
+      setEmail('');
+      setDate('');
+      setSymptoms('');
     }
   }, [editPatient]);
 
