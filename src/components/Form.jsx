@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { toast } from "react-toastify";
 import Error from "./Error";
 
 const Form = ({ patients, setPatients, editPatient, setEditPatient }) => {
@@ -54,10 +55,13 @@ const Form = ({ patients, setPatients, editPatient, setEditPatient }) => {
       );
       setPatients(patientsUpdated);
       setEditPatient({});
+      toast.success(`The patient ${name} has been updated successfully`);
     } else {
       // Creating the patient
       patientObject.id = generateId();
       setPatients([...patients, patientObject]);
+      toast.success(`The patient ${patientObject.name} has been created 
+      successfully`);
     }
 
     // Reset the form

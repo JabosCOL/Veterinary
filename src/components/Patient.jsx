@@ -1,11 +1,11 @@
-const Patient = ({ patient, setEditPatient, removePatient }) => {
+import { toast } from "react-toastify";
+
+const Patient = ({ patient, setEditPatient, setDeletePatient, setModal }) => {
   const { name, owner, email, date, symptoms, id } = patient;
 
   const handleDelete = () => {
-    const response = confirm(`Wish you delete the patient ${name}?`);
-    if (response) {
-      removePatient(id);
-    }
+    setDeletePatient(patient);
+    setModal(true);
   };
 
   return (
