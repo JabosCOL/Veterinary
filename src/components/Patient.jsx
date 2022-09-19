@@ -8,6 +8,14 @@ const Patient = ({ patient, setEditPatient, setDeletePatient, setModal }) => {
     setModal(true);
   };
 
+  const handleEdit = () => {
+    setEditPatient(patient);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="mx-5 mb-3 bg-white shadow-md px-5 py-[2.3rem] rounded-md">
       <p className="font-bold mb-3 text-gray-700 uppercase">
@@ -40,7 +48,7 @@ const Patient = ({ patient, setEditPatient, setDeletePatient, setModal }) => {
         className="bg-indigo-600 p-3 mr-3 text-white uppercase
         font-bold hover:bg-indigo-700 cursor-pointer transition-colors
         rounded-md"
-        onClick={() => setEditPatient(patient)}
+        onClick={handleEdit}
       >
         Edit
       </button>
