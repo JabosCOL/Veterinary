@@ -11,6 +11,7 @@ function App() {
   const [patients, setPatients] = useState(getLS);
   const [editPatient, setEditPatient] = useState({});
   const [deletePatient, setDeletePatient] = useState({});
+  const [patientId, setPatientId] = useState('');
   const [modal, setModal] = useState(false);
 
   useEffect(() => {
@@ -22,6 +23,10 @@ function App() {
     setPatients(patientsUpdated);
   };
 
+  const getPatientId = (id) => {
+    setPatientId(id)
+  }
+
   return (
     <>
       <div className="container mx-auto mt-10">
@@ -32,12 +37,14 @@ function App() {
             setPatients={setPatients}
             editPatient={editPatient}
             setEditPatient={setEditPatient}
+            patientId={patientId}
           />
           <PatientList
             patients={patients}
             setEditPatient={setEditPatient}
             setDeletePatient={setDeletePatient}
             setModal={setModal}
+            getPatientId={getPatientId}
           />
           <ToastContainer />
           {modal && (
