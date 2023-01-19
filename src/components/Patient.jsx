@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 
-const Patient = ({ patient, setEditPatient, setDeletePatient, setModal }) => {
+const Patient = ({ patient, setEditPatient, setDeletePatient, setModal, getPatientId }) => {
   const { name, owner, email, date, symptoms, id } = patient;
 
   const handleDelete = () => {
@@ -16,10 +16,11 @@ const Patient = ({ patient, setEditPatient, setDeletePatient, setModal }) => {
       block: "end",
       inline: "nearest"
     });
+    getPatientId(id)
   };
 
   return (
-    <div className="mx-5 mb-3 bg-white shadow-md px-5 py-[2.3rem] rounded-md">
+    <div id={id} className="mx-5 mb-3 bg-white shadow-md px-5 py-[2.3rem] rounded-md">
       <p className="font-bold mb-3 text-gray-700 uppercase">
         Name: {""}
         <span className="font-normal normal-case">{name}</span>

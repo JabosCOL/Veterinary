@@ -5,6 +5,7 @@ const PatientList = ({
   setEditPatient,
   setDeletePatient,
   setModal,
+  getPatientId
 }) => {
   return (
     <div className="mt-5 md:mt-0 md:w-1/2 lg:w-3/5">
@@ -25,6 +26,7 @@ const PatientList = ({
                 setEditPatient={setEditPatient}
                 setDeletePatient={setDeletePatient}
                 setModal={setModal}
+                getPatientId={getPatientId}
               />
             ))}
           </div>

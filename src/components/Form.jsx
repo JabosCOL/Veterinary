@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import Error from "./Error";
 
-const Form = ({ patients, setPatients, editPatient, setEditPatient }) => {
+const Form = ({ patients, setPatients, editPatient, setEditPatient, patientId }) => {
   const [name, setName] = useState("");
   const [owner, setOwner] = useState("");
   const [email, setEmail] = useState("");
@@ -27,6 +27,16 @@ const Form = ({ patients, setPatients, editPatient, setEditPatient }) => {
 
     return random + date;
   };
+
+  const focusPatient = () => {
+    const patientNode = document.getElementById(patientId)
+
+    patientNode.scrollIntoView({
+      behavior: "smooth",
+      block: "end",
+      inline: "nearest"
+    });
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -56,6 +66,7 @@ const Form = ({ patients, setPatients, editPatient, setEditPatient }) => {
       setPatients(patientsUpdated);
       setEditPatient({});
       toast.success(`The patient ${name} has been updated successfully`);
+      focusPatient()
     } else {
       // Creating the patient
       patientObject.id = generateId();
