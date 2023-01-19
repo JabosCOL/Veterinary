@@ -66,7 +66,7 @@ const Form = ({ patients, setPatients, editPatient, setEditPatient }) => {
       // Creating the patient
       patientObject.id = generateId();
       setPatients([...patients, patientObject]);
-      toast.success(`The patient ${patientObject.name} has been created 
+      toast.success(`The patient ${patientObject.name} has been created
       successfully`);
     }
 
@@ -88,6 +88,7 @@ const Form = ({ patients, setPatients, editPatient, setEditPatient }) => {
       </p>
 
       <form
+        id="form"
         onSubmit={handleSubmit}
         className="bg-white shadow-md rounded-lg py-7 px-5"
       >
@@ -100,7 +101,7 @@ const Form = ({ patients, setPatients, editPatient, setEditPatient }) => {
         <div className="mb-5">
           <label
             htmlFor="pet"
-            className="block text-gray-700 
+            className="block text-gray-700
             uppercase font-bold"
           >
             Pet's name
@@ -110,7 +111,7 @@ const Form = ({ patients, setPatients, editPatient, setEditPatient }) => {
             id="pet"
             type="text"
             placeholder="Name of the pet"
-            className="border-2 w-full p-2 mt-2 placeholder-gray-400 
+            className="border-2 w-full p-2 mt-2 placeholder-gray-400
             rounded-md"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -120,7 +121,7 @@ const Form = ({ patients, setPatients, editPatient, setEditPatient }) => {
         <div className="mb-5">
           <label
             htmlFor="owner"
-            className="block text-gray-700 
+            className="block text-gray-700
             uppercase font-bold"
           >
             Owner's name
@@ -130,7 +131,7 @@ const Form = ({ patients, setPatients, editPatient, setEditPatient }) => {
             id="owner"
             type="text"
             placeholder="Name of the owner"
-            className="border-2 w-full p-2 mt-2 placeholder-gray-400 
+            className="border-2 w-full p-2 mt-2 placeholder-gray-400
               rounded-md"
             value={owner}
             onChange={(e) => setOwner(e.target.value)}
@@ -140,7 +141,7 @@ const Form = ({ patients, setPatients, editPatient, setEditPatient }) => {
         <div className="mb-5">
           <label
             htmlFor="email"
-            className="block text-gray-700 
+            className="block text-gray-700
             uppercase font-bold"
           >
             Email
@@ -150,7 +151,7 @@ const Form = ({ patients, setPatients, editPatient, setEditPatient }) => {
             id="email"
             type="email"
             placeholder="Owner's email"
-            className="border-2 w-full p-2 mt-2 placeholder-gray-400 
+            className="border-2 w-full p-2 mt-2 placeholder-gray-400
               rounded-md"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -160,7 +161,7 @@ const Form = ({ patients, setPatients, editPatient, setEditPatient }) => {
         <div className="mb-5">
           <label
             htmlFor="dischargeDate"
-            className="block text-gray-700 
+            className="block text-gray-700
             uppercase font-bold"
           >
             Discharge date
@@ -169,7 +170,7 @@ const Form = ({ patients, setPatients, editPatient, setEditPatient }) => {
           <input
             id="dischargeDate"
             type="date"
-            className="border-2 w-full p-2 mt-2 placeholder-gray-400 
+            className="border-2 w-full p-2 mt-2 placeholder-gray-400
               rounded-md"
             value={date}
             onChange={(e) => setDate(e.target.value)}
@@ -179,7 +180,7 @@ const Form = ({ patients, setPatients, editPatient, setEditPatient }) => {
         <div className="mb-5">
           <label
             htmlFor="symptoms"
-            className="block text-gray-700 
+            className="block text-gray-700
             uppercase font-bold"
           >
             Symptoms
@@ -188,7 +189,7 @@ const Form = ({ patients, setPatients, editPatient, setEditPatient }) => {
           <textarea
             id="symptoms"
             placeholder="Describe the symptoms"
-            className="border-2 w-full p-2 mt-2 placeholder-gray-400 
+            className="border-2 w-full p-2 mt-2 placeholder-gray-400
               rounded-md"
             value={symptoms}
             onChange={(e) => setSymptoms(e.target.value)}
