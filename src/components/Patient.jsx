@@ -5,6 +5,7 @@ const Patient = ({ patient, setEditPatient, setDeletePatient, setModal, getPatie
 
   const handleDelete = () => {
     setDeletePatient(patient);
+    setEditPatient({})
     setModal(true);
   };
 
