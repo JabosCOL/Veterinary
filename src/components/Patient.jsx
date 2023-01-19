@@ -10,9 +10,11 @@ const Patient = ({ patient, setEditPatient, setDeletePatient, setModal }) => {
 
   const handleEdit = () => {
     setEditPatient(patient);
-    window.scrollTo({
-      top: 0,
+    const form = document.getElementById('form')
+    form.scrollIntoView({
       behavior: "smooth",
+      block: "end",
+      inline: "nearest"
     });
   };
 
@@ -55,7 +57,7 @@ const Patient = ({ patient, setEditPatient, setDeletePatient, setModal }) => {
       <button
         type="submit"
         className="bg-red-600 p-3 text-white uppercase
-        font-bold hover:bg-red-700 cursor-pointer transition-colors 
+        font-bold hover:bg-red-700 cursor-pointer transition-colors
         rounded-md"
         onClick={handleDelete}
       >
